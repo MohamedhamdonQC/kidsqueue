@@ -15,12 +15,12 @@ public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    // ───────── Setup ─────────
+    
     @BeforeMethod
     public void setup() {
         createDriver();
         driver.manage().deleteAllCookies();
-        handleCookiesIfPresent(); // ✅ Auto-called before every test
+        handleCookiesIfPresent(); 
     }
 
     @AfterMethod
@@ -28,7 +28,7 @@ public class BaseTest {
         quitDriver();
     }
 
-    // ───────── SAFE CLICK (IMPROVED) ─────────
+    
     protected void safeClick(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         waitForPageReady();
@@ -56,7 +56,7 @@ public class BaseTest {
         }
     }
 
-    // ───────── HANDLE COOKIES ─────────
+    
     protected void handleCookiesIfPresent() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -106,7 +106,7 @@ public class BaseTest {
         }
     }
 
-    // ───────── PAGE READY ─────────
+    
     protected void waitForPageReady() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(webDriver ->
@@ -116,7 +116,7 @@ public class BaseTest {
         );
     }
 
-    // ───────── DRIVER ─────────
+    
     private void createDriver() {
         WebDriverManager.chromedriver().setup();
 

@@ -41,20 +41,20 @@ public class RequestFundsTest extends BaseTest {
         registerPage.submit();
         Thread.sleep(3000);
 
-        // ── Wait: leave /register ────────────────────────────────────────────
+        
         new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.not(
                         ExpectedConditions.urlContains("/register")
                 ));
 
-        // ── Step 2: Select Roles ─────────────────────────────────────────────
+        
         RoleSelectionPage roleSelectionPage = new RoleSelectionPage(driver);
         roleSelectionPage.clickSelectRole();
         roleSelectionPage.selectFirstRole();
         roleSelectionPage.selectSecondRole();
         roleSelectionPage.confirm();
         Thread.sleep(3000);
-        // ── Step 3: Navigate to Home ─────────────────────────────────────────
+        
         driver.navigate().to(BASE_URL + "/");
         new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.urlToBe(BASE_URL + "/"));
@@ -63,7 +63,7 @@ public class RequestFundsTest extends BaseTest {
         Thread.sleep(3000);
         registerPage.completeChildRegistration("Hamdon", "Test Atuomation");
         Thread.sleep(3000);
-        // ── Step 4: Search and Select ────────────────────────────────────────
+        
         Thread.sleep(3000);
         driver.findElement( By.xpath("//button[@aria-haspopup='menu']")).click();
         Thread.sleep(1500);

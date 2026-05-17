@@ -28,7 +28,7 @@ public class Search {
         this.js     = (JavascriptExecutor) driver;
     }
 
-    // ── Actions ───────────────────────────────────────────────────────────────
+    
     public void searchFor(String keyword) {
         scrollAndClick(searchContainer);
         WebElement input = wait.until(
@@ -44,7 +44,7 @@ public class Search {
         scrollAndClick(firstResult);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    
     private void scrollAndClick(By locator) {
         WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", el);

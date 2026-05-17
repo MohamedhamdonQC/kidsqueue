@@ -19,7 +19,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        // no-op
+        
     }
 
     @Override

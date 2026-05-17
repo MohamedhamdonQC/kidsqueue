@@ -13,7 +13,7 @@ public class ParentPortalPage {
     private final WebDriverWait wait;
     private final JavascriptExecutor js;
 
-    // ── Locators ──────────────────────────────────────────────────────────────
+    
     private final By FirstNameChildname = By.id("children.0.first_name");
     private final By LastNameChildname  = By.id("children.0.last_name");
     private final By BirthMonth        = By.id("children.0.birth_month-trigger");
@@ -35,15 +35,15 @@ public class ParentPortalPage {
         this.js     = (JavascriptExecutor) driver;
     }
 
-    // ── Step 1: Click "Children Info" Next button ─────────────────────────────
+    
 
     public void clickChildrenInfoNext() throws InterruptedException {
-        // wait for page ready
+        
         wait.until(d -> ((JavascriptExecutor) d)
                 .executeScript("return document.readyState").equals("complete"));
         Thread.sleep(600);
 
-        // find the button by text "Children Info", ignore any button with aria-haspopup
+        
         WebElement nextBtn = (WebElement) js.executeScript(
                 "return Array.from(document.querySelectorAll('button')).find(function(btn) {" +
                         "  var text = btn.innerText.trim();" +
@@ -65,7 +65,7 @@ public class ParentPortalPage {
         Thread.sleep(500);
     }
 
-    // ── Step 1: Skip ──────────────────────────────────────────────────────────
+    
 
     public void clickSkip() throws InterruptedException {
         try {
@@ -98,7 +98,7 @@ public class ParentPortalPage {
         js.executeScript("arguments[0].click();", skipBtn);
     }
 
-    // ── Step 2: Children Info ─────────────────────────────────────────────────
+    
 
     public void fillChildFirstName(String value) {
         type(FirstNameChildname, value);
@@ -152,7 +152,7 @@ public class ParentPortalPage {
         Thread.sleep(500);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    
 
     private void selectDropdownOption(By triggerLocator, String optionText)
             throws InterruptedException {

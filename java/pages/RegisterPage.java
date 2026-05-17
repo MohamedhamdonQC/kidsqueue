@@ -20,7 +20,7 @@ public class RegisterPage {
     private final JavascriptExecutor js;
     private final Random random = new Random();
 
-    // ── Locators ──────────────────────────────────────────────────────────────
+    
     private final By firstNameInput   = By.cssSelector("form > div:nth-child(1) input");
     private final By lastNameInput    = By.cssSelector("form > div:nth-child(2) input");
     private final By emailInput       = By.cssSelector("form > div:nth-child(3) input");
@@ -78,7 +78,7 @@ public class RegisterPage {
         scrollAndClick(reviewSubmit);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    
     private void type(By locator, String text) {
         WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         el.clear();
@@ -119,7 +119,7 @@ public class RegisterPage {
 
     private void scrollAndClick(By locator) {
         for (int attempt = 0; attempt < 2; attempt++) {
-            // Force the browser window to the bottom before clicking.
+            
             js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
             try {
                 Thread.sleep(300);
@@ -129,10 +129,10 @@ public class RegisterPage {
 
             WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
             try {
-                el.click();                                      // Try native click first
+                el.click();                                      
                 return;
             } catch (org.openqa.selenium.ElementClickInterceptedException e) {
-                js.executeScript("arguments[0].click();", el);  // Fallback: JS click
+                js.executeScript("arguments[0].click();", el);  
                 return;
             } catch (StaleElementReferenceException stale) {
                 if (attempt == 1) {

@@ -136,10 +136,10 @@ public class GroupPage {
                 "return document.readyState === 'complete'"
         ));
 
-        // اسكرول على مراحل
+        
         long totalHeight = (long) js.executeScript("return document.body.scrollHeight");
         long currentPos = 0;
-        long step = totalHeight / 5; // هينزل 5 خطوات
+        long step = totalHeight / 5; 
 
         while (currentPos < totalHeight) {
             currentPos += step;
@@ -147,7 +147,7 @@ public class GroupPage {
             Thread.sleep(500);
         }
 
-        // تأكيد نزل لآخر نقطة
+        
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         Thread.sleep(1000);
     }

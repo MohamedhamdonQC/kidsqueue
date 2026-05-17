@@ -33,7 +33,7 @@ public class dashboardPage {
         scrollAndClick(watching);
     }
 
-    /** Returns true if a card with the given school name is visible. */
+    
     public boolean isSchoolVisible(String name) {
         By locator = By.xpath(
                 "//div[@data-slot='card-title' and contains(text(),'" + name + "')]");
@@ -45,32 +45,26 @@ public class dashboardPage {
         }
     }
 
-    /**
-     * Checks whether the sent message text appears anywhere on the messages page.
-     * Tries an exact-text XPath first; falls back to a page-source contains check.
-     */
+    
     public boolean isMessageVisible(String messageText) {
         By locator = By.xpath("//*[contains(text(),'" + messageText + "')]");
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             return true;
         } catch (Exception e) {
-            // Fallback: raw page source check
+            
             return driver.getPageSource().contains(messageText);
         }
     }
 
-    /**
-     * Scrolls the page fully to the bottom smoothly,
-     * used after navigating to the messages dashboard to reveal sent messages.
-     */
+    
     public void scrollToMessagesBottom() {
         js.executeScript(
                 "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
         try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
     }
 
-    // ── Private Helpers ───────────────────────────────────────────────────────
+    
 
     private void scrollToBottom() {
         js.executeScript("window.scrollBy(0, 400);");

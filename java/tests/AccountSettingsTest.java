@@ -109,7 +109,7 @@ public class AccountSettingsTest extends BaseTest {
 
         Thread.sleep(3000);
 
-        // ================= ASSERT =================
+        
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
@@ -119,14 +119,14 @@ public class AccountSettingsTest extends BaseTest {
                 )
         );
 
-        String actualText = userNameElement.getText(); // Hello, TestFirst TestLast
+        String actualText = userNameElement.getText(); 
 
         String actualName = actualText.replace("Hello,", "").trim();
         String expectedName = (NEW_FIRST_NAME + " " + NEW_LAST_NAME).trim();
 
         Assert.assertTrue(
                 actualName.equalsIgnoreCase(expectedName),
-                "❌ Name mismatch! Expected: " + expectedName + " but found: " + actualName
+                " Name mismatch! Expected: " + expectedName + " but found: " + actualName
         );
     }
 }

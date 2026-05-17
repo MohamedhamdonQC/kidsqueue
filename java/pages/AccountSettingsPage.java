@@ -22,7 +22,7 @@ public class AccountSettingsPage {
         this.js = (JavascriptExecutor) driver;
     }
 
-    // -------------------- Navigation --------------------
+    
 
     public void openAccountPage(String baseUrl) {
         driver.get(baseUrl + "/parent/account");
@@ -32,7 +32,7 @@ public class AccountSettingsPage {
         clickByVisibleText("Settings");
     }
 
-    // -------------------- Actions --------------------
+    
 
     public void updateFirstAndLastName(String firstName, String lastName) {
         setInputValue(firstNameLocator(), firstName);
@@ -90,7 +90,7 @@ public class AccountSettingsPage {
         clickById("bt");
     }
 
-    // -------------------- Locators --------------------
+    
 
     private By firstNameLocator() {
         return firstMatch(
@@ -104,7 +104,7 @@ public class AccountSettingsPage {
         );
     }
 
-    // -------------------- Helpers --------------------
+    
 
     private void setInputValue(By locator, String value) {
         WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -152,7 +152,7 @@ public class AccountSettingsPage {
         }
     }
 
-    // -------------------- Save Button (FIXED) --------------------
+    
 
     private void clickSaveChanges() {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -173,7 +173,7 @@ public class AccountSettingsPage {
         }
     }
 
-    // -------------------- Utility --------------------
+    
 
     private By firstMatch(By... locators) {
         for (By locator : locators) {

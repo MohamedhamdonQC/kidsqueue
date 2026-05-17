@@ -15,7 +15,7 @@ public class LoginPage {
     private final WebDriverWait wait;
     private final JavascriptExecutor js;
 
-    // ── Locators ──────────────────────────────────────────────────────────────
+    
     private final By emailInput    = By.cssSelector("input[type='email'], input[name='email']");
     private final By passwordInput = By.cssSelector("input[type='password'], input[name='password']");
     private final By submitButton  = By.cssSelector("button[type='submit']");

@@ -68,7 +68,7 @@ public class MyDocumentsettings extends BaseTest {
             Robot robot = new Robot();
             Thread.sleep(1000);
 
-            // Press Enter to click OK
+            
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 

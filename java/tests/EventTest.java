@@ -55,7 +55,7 @@ public class EventTest extends BaseTest {
         roleSelectionPage.selectSecondRole();
         roleSelectionPage.confirm();
         Thread.sleep(3000);
-        //----2 Create Group Frist _------//
+        
         GroupPage groupPage = new GroupPage(driver);
         driver.navigate().to("https://staging.kidsqueue.softigital.com/parent/groups?page=1");
         groupPage.CreateGroup();
@@ -66,58 +66,58 @@ public class EventTest extends BaseTest {
         groupPage.Image(imagePath);
         groupPage.ClicktoCreateGroup();
         Thread.sleep(3000);
-        // ── 2. Navigate to Groups page ────────────────────────────────────────
+        
         EventPage eventPage = new EventPage(driver);
         driver.navigate().to("https://staging.kidsqueue.softigital.com/parent/groups?page=1");
-        // ── 3. Switch to Events tab ───────────────────────────────────────────
+        
         eventPage.clickEventsTab();
         Thread.sleep(3000);
-        // ── 4. Open Create Event dialog ───────────────────────────────────────
+        
         eventPage.clickCreateEvent();
 
-        // ── 5. Build test data ────────────────────────────────────────────────
+        
         long ts = System.currentTimeMillis();
         String eventName        = "Automation Event "       + ts;
         String eventDescription = "Automation description " + ts;
 
-        // Calendar day strings (day-of-month only, as shown in the picker)
+        
 
         ZoneId cairo = ZoneId.of("Africa/Cairo");
         String startDay = String.valueOf(LocalDate.now(cairo).plusDays(1).getDayOfMonth());
         String endDay   = String.valueOf(LocalDate.now(cairo).plusDays(2).getDayOfMonth());
 
-        // Time in "HHmm" – typeTime() strips non-digits before sending
+        
         String startTime = LocalTime.of(20, 37).format(DateTimeFormatter.ofPattern("hhmma"));
         String endTime   = LocalTime.of(17, 41).format(DateTimeFormatter.ofPattern("hhmma"));
 
         String location = "Cairo";
 
-        // ── 6. Fill the form ──────────────────────────────────────────────────
+        
         eventPage.fillEventName(eventName);
         eventPage.fillEventDescription(eventDescription);
 
-        // Group/Audience: click combobox → pick first result
+        
         eventPage.chooseFirstAudienceResult();
 
-        // Visibility: click dropdown → pick "Public"
+        
         eventPage.choosePublicVisibility();
 
-        // Dates: open calendar picker and click the correct day cell
+        
         Thread.sleep(3000);
         eventPage.selectStartDate(startDay);
         eventPage.selectEndDate(endDay);
 
-        // Times: native <input type="time">
+        
         eventPage.fillStartTime(startTime);
         eventPage.fillEndTime(endTime);
 
-        // Location
+        
         eventPage.fillLocation(location);
 
-        // ── 7. Proceed to next step ───────────────────────────────────────────
-        Thread.sleep(2000); // Give form time to validate
+        
+        Thread.sleep(2000); 
 
-        // Scroll to bottom of modal first
+        
         ((JavascriptExecutor) driver).executeScript(
                 "document.querySelector('[role=\"dialog\"]')?.scrollTo(0, 9999);"
         );
@@ -163,7 +163,7 @@ public class EventTest extends BaseTest {
         roleSelectionPage.selectSecondRole();
         roleSelectionPage.confirm();
         Thread.sleep(3000);
-        //----2 Create Group First _------//
+        
         GroupPage groupPage = new GroupPage(driver);
         driver.navigate().to("https://staging.kidsqueue.softigital.com/parent/groups?page=1");
         groupPage.CreateGroup();
@@ -174,57 +174,57 @@ public class EventTest extends BaseTest {
         groupPage.Image(imagePath);
         groupPage.ClicktoCreateGroup();
         Thread.sleep(3000);
-        // ── 2. Navigate to Event Taps ────────────────────────────────────────
+        
         EventPage eventPage = new EventPage(driver);
-        // ── 3. Switch to Events tab ───────────────────────────────────────────
+        
         eventPage.clickEventsTab();
         Thread.sleep(3000);
-        // ── 4. Open Create Event dialog ───────────────────────────────────────
+        
         eventPage.clickCreateEvent();
 
-        // ── 5. Build test data ────────────────────────────────────────────────
+        
         long ts = System.currentTimeMillis();
         String eventName        = "Automation Event "       + ts;
         String eventDescription = "Automation description " + ts;
 
-        // Calendar day strings (day-of-month only, as shown in the picker)
+        
 
         ZoneId cairo = ZoneId.of("Africa/Cairo");
         String startDay = String.valueOf(LocalDate.now(cairo).plusDays(1).getDayOfMonth());
         String endDay   = String.valueOf(LocalDate.now(cairo).plusDays(2).getDayOfMonth());
 
-        // Time in "HHmm" – typeTime() strips non-digits before sending
+        
         String startTime = LocalTime.of(20, 37).format(DateTimeFormatter.ofPattern("hhmma"));
         String endTime   = LocalTime.of(17, 41).format(DateTimeFormatter.ofPattern("hhmma"));
 
         String location = "Cairo";
 
-        // ── 6. Fill the form ──────────────────────────────────────────────────
+        
         eventPage.fillEventName(eventName);
         eventPage.fillEventDescription(eventDescription);
 
-        // Group/Audience: click combobox → pick first result
+        
         eventPage.chooseFirstAudienceResult();
 
-        // Visibility: click dropdown → pick "Public"
+        
         eventPage.choosePublicVisibility();
 
-        // Dates: open calendar picker and click the correct day cell
+        
         Thread.sleep(3000);
         eventPage.selectStartDate(startDay);
         eventPage.selectEndDate(endDay);
 
-        // Times: native <input type="time">
+        
         eventPage.fillStartTime(startTime);
         eventPage.fillEndTime(endTime);
 
-        // Location
+        
         eventPage.fillLocation(location);
 
-        // ── 7. Proceed to next step ───────────────────────────────────────────
-        Thread.sleep(2000); // Give form time to validate
+        
+        Thread.sleep(2000); 
 
-        // Scroll to bottom of modal first
+        
         ((JavascriptExecutor) driver).executeScript(
                 "document.querySelector('[role=\"dialog\"]')?.scrollTo(0, 9999);"
         );
@@ -234,8 +234,8 @@ public class EventTest extends BaseTest {
         eventPage.fillChecklistNote(0, "Verify all passports are valid for at least 6 months");
         eventPage.fillChecklistNote(1, "Verify all passports are valid for at least 6 months");
         eventPage.fillChecklistNote(2, "Verify all passports are valid for at least 6 months");
-       // eventPage.fillChecklistNote(3, "Verify all passports are valid for at least 6 months");
-       // eventPage.fillChecklistNote(4, "Verify all passports are valid for at least 6 months");
+       
+       
         eventPage.fillChecklistNote(5, "Verify all passports are valid for at least 6 months");
 
         eventPage.clickSubmit();
@@ -248,7 +248,7 @@ public class EventTest extends BaseTest {
             Robot robot = new Robot();
             Thread.sleep(1000);
 
-            // Press Enter to click OK
+            
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 

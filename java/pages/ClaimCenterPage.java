@@ -149,7 +149,7 @@ public class ClaimCenterPage {
                     select.selectByIndex(1);
                 }
             } catch (Exception ignored) {
-                // Leave custom selects alone.
+                
             }
         }
     }
